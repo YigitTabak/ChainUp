@@ -1,0 +1,119 @@
+.chainBox {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.statValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.brokenStat .statValue {
+  color: var(--color-red);
+}
+
+.statDivider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+}
+
+.chainLength {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 0.25rem 0.6rem;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.chainScroll {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+}
+
+.chainRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  row-gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.connector {
+  width: 12px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.brightConnector {
+  background: linear-gradient(90deg, #F59E0B, #FCD34D);
+}
+
+.emptyChain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyText {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .chainBox {
+    padding: 1.25rem;
+  }
+
+  .chainRow {
+    row-gap: 1.2rem;
+  }
+}

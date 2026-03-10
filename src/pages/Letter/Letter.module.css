@@ -1,0 +1,263 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.center {
+  width: 100%;
+  max-width: 560px;
+}
+
+.letterList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.noLetter {
+  text-align: center;
+  padding: 3rem;
+}
+
+.noLetter p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ─── Paper ─── */
+.paperWrap {
+  position: relative;
+}
+
+.paper {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  /* Paper texture lines */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(226, 232, 240, 0.4) 27px,
+    rgba(226, 232, 240, 0.4) 28px
+  );
+}
+
+.paperTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid var(--border);
+  flex-shrink: 0;
+  gap: 0.75rem;
+}
+
+.paperTopRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.deleteBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.confirmText {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.confirmYes {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.confirmNo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.paperTopLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.paperLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.taskName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.unlockedBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  background: rgba(255, 122, 53, 0.1);
+  border-radius: 99px;
+  padding: 0.2rem 0.6rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ─── Unlocked content ─── */
+.content {
+  flex: 1;
+}
+
+.letterText {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  /* Letter styling */
+}
+
+/* ─── Locked content ─── */
+.lockedContent {
+  flex: 1;
+  position: relative;
+}
+
+.blurredLines {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.blurLine {
+  height: 12px;
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.lockOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  padding: 2rem;
+}
+
+.lockIcon {
+  font-size: 2.5rem;
+}
+
+.lockTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.lockDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Unlocked state — subtle glow */
+.unlocked .paper {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(255, 122, 53, 0.1);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 1.25rem 1rem 5rem;
+    align-items: flex-start;
+  }
+
+  .paper {
+    padding: 1.5rem;
+  }
+}

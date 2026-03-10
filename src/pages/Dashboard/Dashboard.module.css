@@ -1,0 +1,74 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.greet {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+}
+
+.welcomeText {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 0;
+}
+
+.taskArea {
+  flex: 6;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.chainArea {
+  flex: 4;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 1.25rem 1rem 5rem; /* bottom pad for mobile sidebar */
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .taskArea {
+    flex: none;
+  }
+
+  .chainArea {
+    flex: none;
+  }
+}
