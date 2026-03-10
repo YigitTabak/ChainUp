@@ -54,14 +54,14 @@ const Landing = () => {
       {/* ─── Hero ─── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>Disiplin &gt; motivasyon</div>
+          <div className={styles.heroBadge}>Süreklilik fark yaratır</div>
           <h1 className={styles.heroTitle}>
             Zinciri kırma
             <br />
             <span className={styles.heroAccent}>Her gün bir halka</span>
           </h1>
           <p className={styles.heroDesc}>
-            ChainUp, hedeflerini görsel bir zincire dönüştürür. Belirlediğin günlük görevlerini tamamla, zincire yeni bir halkanı ekle {' '}
+            ChainUp ile hedeflerini görsel bir zincire dönüştür. Belirlediğin günlük görevlerini tamamlayarak zincire yeni bir halka ekle ve {' '}
             <strong>zinciri kırmadan hedefine ulaş.</strong>
           </p>
           <button className={styles.heroCta} onClick={handleStart}>

@@ -49,6 +49,7 @@
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .brokenStat .statValue {
@@ -126,6 +127,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .chainRow {
@@ -167,6 +169,12 @@
   border: 1px solid var(--border);
 }
 
+.lastGroup {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .emptyChain {
   flex: 1;
   display: flex;
@@ -188,5 +196,13 @@
 
   .chainRow {
     row-gap: 1.2rem;
+  }
+
+  .statValue {
+    font-size: 1.1rem;
+  }
+
+  .statLabel {
+    font-size: 0.6rem;
   }
 }

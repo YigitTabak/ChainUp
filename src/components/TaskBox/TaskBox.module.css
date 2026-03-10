@@ -133,6 +133,6 @@
 
 @media (max-width: 768px) {
   .taskBox {
-    padding: 1.25rem;
+    padding: 1rem 0.75rem;
   }
 }

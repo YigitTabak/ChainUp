@@ -109,7 +109,27 @@
   color: var(--text-secondary);
 }
 
+.mobileTopBar {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobileTopBar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    padding: 0 1rem;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    z-index: 51;
+    cursor: pointer;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
@@ -150,6 +170,15 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.7rem;
     text-align: center;
+    position: relative;
+  }
+
+  .badge {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    margin-left: 0;
+    font-size: 0.55rem;
   }
 
   .icon {
@@ -162,5 +191,9 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.7rem;
     width: auto;
+  }
+
+  .signOut span {
+    display: none;
   }
 }

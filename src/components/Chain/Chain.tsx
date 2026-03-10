@@ -51,25 +51,26 @@ const Chain = () => {
 
       <div className={styles.chainScroll}>
         <div className={styles.chainRow}>
-          {displayRings.map((slot, i) => (
-            <React.Fragment key={slot.day}>
-              <Ring
-                type={slot.type}
-                dayNumber={slot.day}
-              />
-              {i < displayRings.length - 1 && (
+          {displayRings.map((slot, i) => {
+            const isLast = i === displayRings.length - 1;
+            if (isLast) {
+              return (
+                <span key={slot.day} className={styles.lastGroup}>
+                  <Ring type={slot.type} dayNumber={slot.day} />
+                  <div className={styles.connector} />
+                  <div className={styles.finishFlag} title="Bitiş" />
+                </span>
+              );
+            }
+            return (
+              <React.Fragment key={slot.day}>
+                <Ring type={slot.type} dayNumber={slot.day} />
                 <div
                   className={`${styles.connector} ${slot.type === 'bright' ? styles.brightConnector : ''}`}
                 />
-              )}
-            </React.Fragment>
-          ))}
-          {displayRings.length > 0 && (
-            <>
-              <div className={styles.connector} />
-              <div className={styles.finishFlag} title="Bitiş" />
-            </>
-          )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
     </div>

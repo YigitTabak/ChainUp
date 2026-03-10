@@ -159,6 +159,16 @@
   overflow: hidden;
 }
 
+.heroBg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, var(--bg-surface));
+}
+
 .blob1 {
   position: absolute;
   top: -100px;
@@ -418,23 +428,59 @@
   .stepsGrid {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 1.25rem 3rem;
+    min-height: auto;
+  }
+
+  .heroBadge {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+  }
+
+  .heroDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .heroCta {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .chainPreview {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  /* İlk 6 halkayı (child 1-12) gizle, geri kalanları göster */
+  .chainPreview > *:nth-child(-n+12) {
+    display: none;
+  }
+
+  .previewRing {
+    width: 28px;
+    height: 28px;
+  }
+
+  .previewConnector {
+    width: 7px;
+  }
+
   .stepsGrid {
     grid-template-columns: 1fr;
   }
 
-  .chainPreview {
-    padding: 1rem;
-  }
-
-  .previewRing {
-    width: 30px;
-    height: 30px;
-  }
-
-  .previewConnector {
-    width: 8px;
+  .howSection {
+    border-top: none;
   }
 }

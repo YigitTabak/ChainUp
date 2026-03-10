@@ -17,6 +17,10 @@ const Sidebar = () => {
 
   return (
     <aside className={styles.sidebar}>
+      <div className={styles.mobileTopBar} onClick={() => navigate('/')}>
+        <span className={styles.logoIcon}>⬡</span>
+        <span className={styles.logoText}>ChainUp</span>
+      </div>
       <div className={styles.top}>
         <div className={styles.logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <span className={styles.logoIcon}>⬡</span>

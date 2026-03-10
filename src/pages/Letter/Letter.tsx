@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Letter.module.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { useAppContext } from '../../context/AppContext';
+import ConfirmModal from '../../components/ConfirmModal/ConfirmModal';
 
 const Letter = () => {
   const { letters, deleteLetter } = useAppContext();
@@ -10,6 +11,13 @@ const Letter = () => {
   return (
     <div className={styles.layout}>
       <Sidebar />
+      <ConfirmModal
+        isOpen={confirmDelete !== null}
+        title="Mektubu silmek istiyor musun?"
+        description="Bu işlem geri alınamaz."
+        onConfirm={() => { if (confirmDelete) { deleteLetter(confirmDelete); } setConfirmDelete(null); }}
+        onCancel={() => setConfirmDelete(null)}
+      />
       <main className={styles.main}>
         <div className={styles.center}>
           {letters.length === 0 ? (
@@ -36,23 +44,6 @@ const Letter = () => {
                             <span className={styles.unlockedBadge}>✦ Açıldı</span>
                           )}
                           {isUnlocked && (
-                            confirmDelete === letter.taskId ? (
-                              <div className={styles.confirmRow}>
-                                <span className={styles.confirmText}>Silinsin mi?</span>
-                                <button
-                                  className={styles.confirmYes}
-                                  onClick={() => { deleteLetter(letter.taskId); setConfirmDelete(null); }}
-                                >
-                                  Evet
-                                </button>
-                                <button
-                                  className={styles.confirmNo}
-                                  onClick={() => setConfirmDelete(null)}
-                                >
-                                  Hayır
-                                </button>
-                              </div>
-                            ) : (
                               <button
                                 className={styles.deleteBtn}
                                 onClick={() => setConfirmDelete(letter.taskId)}
@@ -66,7 +57,6 @@ const Letter = () => {
                                   <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
                                 </svg>
                               </button>
-                            )
                           )}
                         </div>
                       </div>
