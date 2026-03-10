@@ -27,7 +27,7 @@ const History = () => {
       <main className={styles.main}>
         <div className={styles.header}>
           <h1 className={styles.title}>Geçmiş</h1>
-          <p className={styles.subtitle}>Hangi günler parlak, hangi günler kırıktı?</p>
+          <p className={styles.subtitle}>Tamamladığın görevlerin kayıtları burada</p>
         </div>
         <div className={styles.content}>
           <div className={styles.calendarWrap}>

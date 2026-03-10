@@ -81,6 +81,28 @@
   transform: translateY(0);
 }
 
+.btnSignOut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1.5px solid var(--border);
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  font-family: var(--font-family);
+}
+
+.btnSignOut:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
 @media (max-width: 480px) {
   .navbar {
     padding: 0 1rem;

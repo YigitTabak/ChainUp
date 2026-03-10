@@ -16,9 +16,13 @@
 
 /* ─── Bright ring ─── */
 .bright {
-  border-color: #F59E0B;
-  background: radial-gradient(circle at 35% 35%, #FCD34D, #F59E0B);
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.45), 0 2px 6px rgba(245, 158, 11, 0.3);
+  border-color: #b8860b;
+  background: radial-gradient(circle at 30% 28%, #fff0a0, #e6b800 35%, #c8960a 65%, #8b6508);
+  box-shadow:
+    0 0 12px rgba(200, 150, 10, 0.7),
+    0 0 28px rgba(200, 150, 10, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 2px 8px rgba(100, 70, 0, 0.4);
   animation: ringAppear 0.4s ease;
 }
 

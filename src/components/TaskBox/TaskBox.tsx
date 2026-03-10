@@ -16,7 +16,7 @@ const TaskBox = () => {
         <div>
           <h1 className={styles.title}>Görevler</h1>
           <p className={styles.subtitle}>
-            Bugün neler yapacaksın?
+            Bugün neler yaptın?
           </p>
         </div>
         {activeTasks.length < MAX_TASKS && (

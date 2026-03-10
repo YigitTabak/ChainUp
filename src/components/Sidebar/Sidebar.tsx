@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.top}>
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <span className={styles.logoIcon}>⬡</span>
           <span className={styles.logoText}>ChainUp</span>
         </div>
@@ -60,8 +60,12 @@ const Sidebar = () => {
       </div>
 
       <button className={styles.signOut} onClick={handleSignOut}>
-        <span>↩</span>
-        <span>Çıkış</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
+        <span>Çıkış Yap</span>
       </button>
     </aside>
   );

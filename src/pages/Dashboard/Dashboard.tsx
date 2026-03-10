@@ -27,9 +27,7 @@ const Dashboard = () => {
           <span className={styles.greet}>
             {greeting()}, {profile?.displayName?.split(' ')[0] ?? 'sen'} 👋
           </span>
-          <p className={styles.welcomeText}>Bugün ne tamamlayacaksın?</p>
         </div>
-
         <div className={styles.content}>
           <div className={styles.taskArea}>
             <TaskBox />

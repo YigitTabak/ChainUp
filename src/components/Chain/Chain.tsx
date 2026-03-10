@@ -38,7 +38,15 @@ const Chain = () => {
             <span className={styles.statLabel}>kalan halka</span>
           </div>
         </div>
-        <span className={styles.chainLength}>{maxTaskDuration} halka</span>
+        <div className={styles.headerRight}>
+          <span className={styles.chainLength}>{maxTaskDuration} halka</span>
+          <div className={styles.infoWrap}>
+            <span className={styles.infoIcon}>?</span>
+            <div className={styles.tooltip}>
+              Birden fazla günlük görevin olduğunda halkanın eklenebilmesi için tüm görevlerin tamamlanmış olması gerekmektedir.
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.chainScroll}>
@@ -56,6 +64,12 @@ const Chain = () => {
               )}
             </React.Fragment>
           ))}
+          {displayRings.length > 0 && (
+            <>
+              <div className={styles.connector} />
+              <div className={styles.finishFlag} title="Bitiş" />
+            </>
+          )}
         </div>
       </div>
     </div>

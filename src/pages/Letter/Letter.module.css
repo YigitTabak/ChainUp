@@ -7,20 +7,21 @@
 .main {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 2rem;
 }
 
 .center {
   width: 100%;
-  max-width: 560px;
+  max-width: 1200px;
 }
 
 .letterList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
 .noLetter {

@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import styles from './DayPanel.module.css';
 import type { DailyLog, Task } from '../../types';
 import { formatDisplayDate } from '../../utils/dateUtils';
-import { updateDailyNote } from '../../firebase/services';
-import { useAuth } from '../../context/AuthContext';
 
 interface Props {
   dateStr: string | null;
@@ -13,20 +10,6 @@ interface Props {
 }
 
 const DayPanel = ({ dateStr, log, tasks, onClose }: Props) => {
-  const { user } = useAuth();
-  const [note, setNote] = useState(log?.note ?? '');
-  const [saving, setSaving] = useState(false);
-
-  const handleSaveNote = async () => {
-    if (!user || !dateStr) return;
-    setSaving(true);
-    try {
-      await updateDailyNote(user.uid, dateStr, note);
-    } finally {
-      setSaving(false);
-    }
-  };
-
   if (!dateStr) return null;
 
   const completedTaskIds = Object.entries(log?.taskCompletions ?? {})
@@ -69,23 +52,7 @@ const DayPanel = ({ dateStr, log, tasks, onClose }: Props) => {
           </div>
         )}
 
-        <div className={styles.section}>
-          <p className={styles.sectionTitle}>Not</p>
-          <textarea
-            className={styles.noteInput}
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Bu gün için bir şeyler yaz…"
-            rows={4}
-          />
-          <button
-            className={styles.saveBtn}
-            onClick={handleSaveNote}
-            disabled={saving}
-          >
-            {saving ? 'Kaydediliyor…' : 'Notu Kaydet'}
-          </button>
-        </div>
+
       </div>
     </div>
   );

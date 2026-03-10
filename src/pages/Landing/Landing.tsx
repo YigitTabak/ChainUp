@@ -8,26 +8,26 @@ const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Görevini belirle',
-    desc: 'Ulaşmak istediğin hedefi ve günlük alışkanlığını gir. Kaç gün süreceğini seç.',
+    desc: 'Ulaşmak istediğin hedefi günlük göreviyle beraber gir. Kaç gün süreceğini seç.',
     color: 'orange',
   },
   {
     step: '02',
     title: 'Kendine mektup yaz',
-    desc: 'Süreci tamamladığında okuyacağın bir mektup yaz. Kendine söz ver.',
+    desc: 'Hedefini gerçekleştirdiğinde okuyacağın bir mektup yaz.',
     color: 'blue',
   },
   {
     step: '03',
-    title: 'Her gün tick işaretle',
-    desc: 'Günlük hedefini tamamladında yaklaş ve işaretle. Bir dakika yeter.',
+    title: 'Her gün görevlerini yap',
+    desc: 'Zincirine halkalar eklemek için istikrarlı bir şekilde günlük görevlerini tamamlayarak dashboardta işaretle.',
     color: 'green',
   },
   {
     step: '04',
-    title: 'Zincirini koru',
-    desc: 'Her gece sistem zincire yeni bir halka ekler. Parlak halkalarla zincirinİ dolu tut.',
-    color: 'orange',
+    title: 'Zincirini kırmadan sonuna kadar koru',
+    desc: 'Zincirini tamamla ve hedefine ulaş',
+    color: 'yellow',
   },
 ];
 
@@ -54,16 +54,15 @@ const Landing = () => {
       {/* ─── Hero ─── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.heroBadge}>Sadece senin için</div>
+          <div className={styles.heroBadge}>Disiplin &gt; motivasyon</div>
           <h1 className={styles.heroTitle}>
-            Zincirinizi kırmayın.
+            Zinciri kırma
             <br />
-            <span className={styles.heroAccent}>Her gün bir halka.</span>
+            <span className={styles.heroAccent}>Her gün bir halka</span>
           </h1>
           <p className={styles.heroDesc}>
-            ChainUp, alışkanlıklarını görsel bir zincire dönüştürür. Rekabet yok, liderboard yok —
-            sadece senin ilerlemen ve {' '}
-            <strong>sürekliliğin gücü.</strong>
+            ChainUp, hedeflerini görsel bir zincire dönüştürür. Belirlediğin günlük görevlerini tamamla, zincire yeni bir halkanı ekle {' '}
+            <strong>zinciri kırmadan hedefine ulaş.</strong>
           </p>
           <button className={styles.heroCta} onClick={handleStart}>
             Zincirini Başlat →
@@ -83,6 +82,8 @@ const Landing = () => {
                 )}
               </React.Fragment>
             ))}
+            <div className={styles.previewConnector} />
+            <div className={styles.previewFinishFlag} />
           </div>
         </div>
 
@@ -97,7 +98,7 @@ const Landing = () => {
       <section className={styles.howSection}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Nasıl çalışır?</div>
-          <h2 className={styles.sectionTitle}>Dört adımda hayatınızı değiştirin</h2>
+          <h2 className={styles.sectionTitle}>Dört adımda hedefine ulaş</h2>
 
           <div className={styles.stepsGrid}>
             {HOW_IT_WORKS.map((item) => (
@@ -116,10 +117,9 @@ const Landing = () => {
         <div className={styles.sectionInner}>
           <div className={styles.letterCard}>
             <div className={styles.letterLeft}>
-              <div className={styles.sectionLabel}>Zaman kapsülü</div>
               <h2 className={styles.letterTitle}>Geleceğindeki sana bir mektup</h2>
               <p className={styles.letterDesc}>
-                Başlarken kendine söz veriyorsun. Hedefine ulaştığında — zincirin tamamlandığında —
+                Başlarken kendine söz veriyorsun. Hedefine ulaştığında, zincirin tamamlandığında
                 o mektup açılıyor. Hem gururu hem de yolculuğu aynı anda hissediyorsun.
               </p>
               <button className={styles.heroCta} onClick={handleStart}>
@@ -146,10 +146,9 @@ const Landing = () => {
       {/* ─── CTA ─── */}
       <section className={styles.ctaSection}>
         <div className={styles.sectionInner}>
-          <h2 className={styles.ctaTitle}>Bugün başlamak için doğru gün.</h2>
-          <p className={styles.ctaDesc}>Zinciriniz sizi bekliyor.</p>
+          <h2 className={styles.ctaTitle}>"Bir ağaç dikmek için en iyi zaman 20 sene önceydi. İkinci en iyi zaman ise şimdi."</h2>
           <button className={styles.heroCta} onClick={handleStart}>
-            Ücretsiz Başla →
+            Başla
           </button>
         </div>
       </section>
