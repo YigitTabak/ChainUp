@@ -13,6 +13,11 @@
 5. **Complete the chain** — Once all rings are filled, unlock and read your letter.
 
 ---
+![Homepage](https://github.com/YigitTabak/ChainUp/blob/master/src/assets/HomePage.png?raw=true)
+![HowItWorks](https://github.com/YigitTabak/ChainUp/blob/master/src/assets/HowItWorks.png?raw=true)
+![Chain](https://github.com/YigitTabak/ChainUp/blob/master/src/assets/Chain.png?raw=true)
+![Letters](https://github.com/YigitTabak/ChainUp/blob/master/src/assets/Letters.png?raw=true)
+![Calendar](https://github.com/YigitTabak/ChainUp/blob/master/src/assets/Calendar.png?raw=true)
 
 ## Tech Stack
 
