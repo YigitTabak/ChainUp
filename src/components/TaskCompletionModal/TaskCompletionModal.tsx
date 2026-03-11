@@ -27,11 +27,9 @@ const TaskCompletionModal = ({ task, onClose }: Props) => {
       <div className={styles.overlay} onClick={onClose}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
           <div className={styles.trophy}>🏆</div>
-          <h2 className={styles.title}>Harika iş!</h2>
+          <h2 className={styles.title}>Tebrikler!</h2>
           <p className={styles.desc}>
             <strong>"{task.title}"</strong> görevini tamamladın.
-            <br />
-            Zincirin kaldığı yerden devam ediyor.
           </p>
           <p className={styles.sub}>
             {task.duration} günlük bir yolculuğu başarıyla atlattın.

@@ -20,7 +20,7 @@ const HOW_IT_WORKS = [
   {
     step: '03',
     title: 'Her gün görevlerini yap',
-    desc: 'Zincirine halkalar eklemek için istikrarlı bir şekilde günlük görevlerini tamamlayarak dashboardta işaretle.',
+    desc: 'Zincirine halkalar eklemek için istikrarlı bir şekilde günlük görevlerini tamamlayarak dashboard üzerinde işaretle.',
     color: 'green',
   },
   {

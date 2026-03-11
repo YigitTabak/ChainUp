@@ -10,6 +10,8 @@ const TaskBox = () => {
   const { activeTasks, pressRing, deleteTask } = useAppContext();
   const [showModal, setShowModal] = useState(false);
 
+  const chainStarted = activeTasks.some((t) => t.completedRings > 0);
+
   return (
     <div className={styles.taskBox}>
       <div className={styles.header}>
@@ -20,9 +22,14 @@ const TaskBox = () => {
           </p>
         </div>
         {activeTasks.length < MAX_TASKS && (
-          <button className={styles.addBtn} onClick={() => setShowModal(true)}>
-            + Görev Ekle
-          </button>
+          <div className={styles.addBtnWrap}>
+            <button className={styles.addBtn} onClick={() => setShowModal(true)} disabled={chainStarted}>
+              + Görev Ekle
+            </button>
+            {chainStarted && (
+              <span className={styles.addBtnTooltip}>Zincir başladıktan sonra görev eklenemez.</span>
+            )}
+          </div>
         )}
       </div>
 
@@ -47,10 +54,15 @@ const TaskBox = () => {
             />
           ))}
           {activeTasks.length < MAX_TASKS && (
-            <button className={styles.addInlineBtn} onClick={() => setShowModal(true)}>
-              <span>+</span>
-              <span>Yeni görev ekle ({MAX_TASKS - activeTasks.length} slot boş)</span>
-            </button>
+            <div className={styles.addBtnWrap}>
+              <button className={styles.addInlineBtn} onClick={() => setShowModal(true)} disabled={chainStarted}>
+                <span>+</span>
+                <span>Yeni görev ekle ({MAX_TASKS - activeTasks.length} slot boş)</span>
+              </button>
+              {chainStarted && (
+                <span className={styles.addBtnTooltip}>Zincir başladıktan sonra görev eklenemez.</span>
+              )}
+            </div>
           )}
         </div>
       )}

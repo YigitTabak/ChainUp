@@ -46,9 +46,40 @@
   flex-shrink: 0;
 }
 
-.addBtn:hover {
+.addBtn:hover:not(:disabled) {
   opacity: 0.9;
   transform: translateY(-1px);
+}
+
+.addBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.addBtnWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.addBtnTooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.addBtnWrap:hover .addBtnTooltip {
+  display: block;
 }
 
 .taskList {
@@ -77,9 +108,14 @@
   text-align: left;
 }
 
-.addInlineBtn:hover {
+.addInlineBtn:hover:not(:disabled) {
   border-color: var(--color-orange);
   color: var(--color-orange);
+}
+
+.addInlineBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .empty {
